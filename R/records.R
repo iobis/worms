@@ -1,3 +1,8 @@
+.parsedate <- function(data) {
+  data$modified <- parse_date(data$modified)
+  return(data)
+}
+
 records <- function(scientificname, like=TRUE, fuzzy=TRUE, marine_only=FALSE, verbose=FALSE) {
 
   result <- NULL
@@ -14,10 +19,11 @@ records <- function(scientificname, like=TRUE, fuzzy=TRUE, marine_only=FALSE, ve
 
     for (node in nodeset) {
       l <- .list(node)
-      result <- rbind(result, as.data.frame(l))
+      result <- rbind(result, as.data.frame(l, stringsAsFactors=FALSE))
     }
 
     if (length(nodeset) < 50) {
+      result <- .parsedate(result)
       return(result)
     } else {
       offset <- offset + 50
