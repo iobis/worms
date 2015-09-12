@@ -3,6 +3,6 @@ Title: R package for consuming the WoRMS webservice
 Version: 0.1
 Authors@R: person("Pieter", "Provoost", email = "pieterprovoost@gmail.com", role = c("aut", "cre"))
 Description: R package for consuming the WoRMS webservice
-Depends: R (>= 3.2.1), httr, XML
+Depends: R (>= 3.2.1), httr, XML, parsedate
 License: MIT
 LazyData: true
