@@ -1,6 +1,8 @@
 .message <- function(action) {
   if (action == "getAphiaRecords") {
     return("<soapenv:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:aph=\"http://aphia/v1.0/AphiaRecords\"><soapenv:Header/><soapenv:Body><aph:getAphiaRecords soapenv:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><scientificname xsi:type=\"xsd:string\">?</scientificname><like xsi:type=\"xsd:boolean\">?</like><fuzzy xsi:type=\"xsd:boolean\">?</fuzzy><marine_only xsi:type=\"xsd:boolean\">?</marine_only><offset xsi:type=\"xsd:int\">?</offset></aph:getAphiaRecords></soapenv:Body></soapenv:Envelope>")
+  } else if (action == "matchAphiaRecordsByNames") {
+    return("<soapenv:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:aph=\"http://aphia/v1.0/AphiaMatches\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"><soapenv:Header/><soapenv:Body><aph:matchAphiaRecordsByNames soapenv:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><scientificnames xsi:type=\"v1:scientificnames\" soapenc:arrayType=\"xsd:string[]\" xmlns:v1=\"http://aphia/v1.0\"><name xsi:type=\"xsd:string\">?</name></scientificnames><marine_only xsi:type=\"xsd:boolean\">?</marine_only></aph:matchAphiaRecordsByNames></soapenv:Body></soapenv:Envelope>")
   }
 }
 
@@ -41,4 +43,9 @@
     }
   }
   return(result)
+}
+
+.parsedate <- function(data, field) {
+  data[[field]] <- parse_date(data[[field]])
+  return(data)
 }
