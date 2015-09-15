@@ -1,6 +1,6 @@
 matchAphiaRecordsByNames <- function(name, marine_only=FALSE, verbose=FALSE) {
 
-  result <- NULL
+  result <- data.frame()
 
   values <- list(name=name, marine_only=marine_only)
   response <- .request("matchAphiaRecordsByNames", values)
@@ -11,7 +11,9 @@ matchAphiaRecordsByNames <- function(name, marine_only=FALSE, verbose=FALSE) {
 
   for (node in nodeset) {
     l <- .list(node)
-    result <- rbind(result, as.data.frame(l, stringsAsFactors=FALSE))
+    if (!"nil" %in% names(l)) {
+      result <- rbind(result, as.data.frame(l, stringsAsFactors=FALSE))
+    }
   }
 
   result <- .parsedate(result, "modified")

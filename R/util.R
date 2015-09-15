@@ -46,6 +46,8 @@
 }
 
 .parsedate <- function(data, field) {
-  data[[field]] <- parse_date(data[[field]])
+  if (field %in% names(data)) {
+    data[[field]] <- parse_date(data[[field]])
+  }
   return(data)
 }
