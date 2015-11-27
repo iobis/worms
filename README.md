@@ -9,7 +9,7 @@ devtools::install_github("pieterprovoost/worms")
 ```
 
 ## Functions
-### getAphiaRecords
+#### getAphiaRecords
 
 ```R
 > getAphiaRecords("Abra alba")
@@ -17,7 +17,7 @@ devtools::install_github("pieterprovoost/worms")
 1  141433 http://www.marinespecies.org/aphia.php?p=taxdetails&id=141433      Abra alba (W. Wood, 1802) Species accepted             NA        141433  Abra alba (W. Wood, 1802) Animalia Mollusca Bivalvia Veneroida Semelidae  Abra Huber, M.; Gofas, S. (2015). Abra alba (W. Wood, 1802). In:  MolluscaBase (2015). Accessed through:  World Register of Marine Species at http://www.marinespecies.org/aphia.php?p=taxdetails&id=141433 on 2015-11-27 urn:lsid:marinespecies.org:taxname:141433        1         NA           NA            NA        NA       like 2010-09-23 12:34:22
 ```
 
-### matchAphiaRecordsByNames
+#### matchAphiaRecordsByNames
 
 ```R
 > matchAphiaRecordsByNames("Buccinum fusiforme")
@@ -26,7 +26,7 @@ devtools::install_github("pieterprovoost/worms")
 2  510389 http://www.marinespecies.org/aphia.php?p=taxdetails&id=510389 Buccinum fusiforme Broderip, 1830 Species unaccepted                                                invalid: junior homonym of <i>Buccinum fusiforme</i> Borson, 1822        138932  Turrisipho fenestratus  (Turton, 1834) Animalia Mollusca Gastropoda Neogastropoda Buccinidae Buccinum Bouchet, P. (2015). Buccinum fusiforme Broderip, 1830. In:  MolluscaBase (2015). Accessed through:  World Register of Marine Species at http://www.marinespecies.org/aphia.php?p=taxdetails&id=510389 on 2015-11-27 urn:lsid:marinespecies.org:taxname:510389        1         NA           NA            NA        NA      exact 2013-03-23 16:18:59
 ```
 
-### getAphiaRecordByID
+#### getAphiaRecordByID
 
 ```R
 > getAphiaRecordByID(141433)
