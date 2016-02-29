@@ -12,6 +12,7 @@ notifications:
     on_failure: change
 
 r_github_packages:
+  - hadley/testthat
   - jimhester/covr
 
 after_success:
