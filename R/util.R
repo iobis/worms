@@ -22,7 +22,7 @@
     xmlValue(node) <- values[[name]]
   }
   response <- POST(url, body=saveXML(xml), add_headers(headers))
-  result <- content(response)
+  result <- xmlParse(content(response, as="text"))
   return(result)
 }
 
