@@ -8,6 +8,8 @@ Depends:
     httr,
     XML,
     parsedate
+Suggests:
+    testthat
 License: MIT
 LazyData: true
 RoxygenNote: 5.0.1
