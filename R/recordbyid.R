@@ -1,3 +1,13 @@
+#' Get Aphia record by ID.
+#'
+#' @param id
+#' @param verbose
+#'
+#' @return Aphia record.
+#' @export
+#'
+#' @examples
+#' getAphiaRecordByID(141433)
 getAphiaRecordByID <- function(id, verbose=FALSE) {
 
   values <- list(AphiaID=id)

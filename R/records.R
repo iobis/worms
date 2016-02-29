@@ -1,3 +1,16 @@
+#' Get Aphia records.
+#'
+#' @param scientificname Scientific name, multiple names are currently not supported.
+#' @param like
+#' @param fuzzy
+#' @param marine_only
+#' @param verbose
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' getAphiaRecords("Abra alba")
 getAphiaRecords <- function(scientificname, like=TRUE, fuzzy=TRUE, marine_only=FALSE, verbose=FALSE) {
 
   result <- NULL

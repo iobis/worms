@@ -1,3 +1,14 @@
+#' Match a scientific name.
+#'
+#' @param name Scientific name, multiple names are currently not supported.
+#' @param marine_only
+#' @param verbose
+#'
+#' @return Matching Aphia records.
+#' @export
+#'
+#' @examples
+#' matchAphiaRecordsByNames("Buccinum fusiforme")
 matchAphiaRecordsByNames <- function(name, marine_only=FALSE, verbose=FALSE) {
 
   result <- data.frame()
