@@ -1,5 +1,8 @@
 # worms
 
+[![Travis-CI Build Status](https://travis-ci.org/pieterprovoost/worms.svg?branch=master)](https://travis-ci.org/pieterprovoost/worms)
+[![Coverage Status](https://coveralls.io/repos/pieterprovoost/worms/badge.svg?branch=master&service=github)](https://coveralls.io/github/pieterprovoost/worms?branch=master)
+
 R package for consuming the WoRMS webservice
 
 ## Installation
