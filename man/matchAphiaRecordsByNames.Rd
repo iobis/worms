@@ -2,22 +2,25 @@
 % Please edit documentation in R/match.R
 \name{matchAphiaRecordsByNames}
 \alias{matchAphiaRecordsByNames}
-\title{Match a scientific name.}
+\title{Match scientific names.}
 \usage{
-matchAphiaRecordsByNames(name, marine_only = FALSE, verbose = FALSE)
+matchAphiaRecordsByNames(scientificnames, marine_only = FALSE,
+  verbose = FALSE)
 }
 \arguments{
-\item{name}{Scientific name, multiple names are currently not supported.}
+\item{marine_only}{Marine only flag.}
 
-\item{verbose}{}
+\item{verbose}{Print HTTP response information.}
+
+\item{scientificname}{Scientific names.}
 }
 \value{
 Matching Aphia records.
 }
 \description{
-Match a scientific name.
+Match scientific names.
 }
 \examples{
-matchAphiaRecordsByNames("Buccinum fusiforme")
+matchAphiaRecordsByNames(c("Buccinum fusiforme", "Abra alba"))
 }
 

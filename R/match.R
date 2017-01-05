@@ -1,33 +1,19 @@
-#' Match a scientific name.
+#' Match scientific names.
 #'
-#' @param name Scientific name, multiple names are currently not supported.
-#' @param marine_only
-#' @param verbose
-#'
+#' @param scientificname Scientific names.
+#' @param marine_only Marine only flag.
+#' @param verbose Print HTTP response information.
 #' @return Matching Aphia records.
 #' @export
-#'
 #' @examples
-#' matchAphiaRecordsByNames("Buccinum fusiforme")
-matchAphiaRecordsByNames <- function(name, marine_only=FALSE, verbose=FALSE) {
+#' matchAphiaRecordsByNames(c("Buccinum fusiforme", "Abra alba"))
+matchAphiaRecordsByNames <- function(scientificnames, marine_only = FALSE, verbose = FALSE) {
 
-  result <- data.frame()
+  names <- as.list(scientificnames)
+  names <- setNames(names, rep("scientificnames[]", length(names)))
+  parameters <- c(names, marine_only = marine_only)
+  response <- worms_request("AphiaRecordsByMatchNames", parameters, verbose)
 
-  values <- list(name=name, marine_only=marine_only)
-  response <- .request("matchAphiaRecordsByNames", values)
-  if (verbose) {
-    print(response)
-  }
-  nodeset <- xpathApply(response, "//item/item")
-
-  for (node in nodeset) {
-    l <- .list(node)
-    if (!"nil" %in% names(l)) {
-      result <- rbind(result, as.data.frame(l, stringsAsFactors=FALSE))
-    }
-  }
-
-  result <- .parsedate(result, "modified")
-  return(result)
+  return(response)
 
 }

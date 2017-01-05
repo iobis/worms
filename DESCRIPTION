@@ -1,13 +1,12 @@
 Package: worms
-Title: R package for consuming the WoRMS webservice
-Version: 0.1
+Title: R client for WoRMS
+Version: 0.2.0
 Authors@R: person("Pieter", "Provoost", email = "pieterprovoost@gmail.com", role = c("aut", "cre"))
-Description: R package for consuming the WoRMS webservice
+Description: R client for WoRMS
 Depends:
     R (>= 3.2.1),
     httr,
-    XML,
-    parsedate
+    jsonlite
 Suggests:
     testthat
 License: MIT
