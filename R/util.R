@@ -8,5 +8,5 @@ worms_request <- function(endpoint, parameters, verbose = FALSE) {
   if (verbose) {
     print(response)
   }
-  return(fromJSON(content(response, "text", encoding = "UTF-8")))
+  return(response)
 }
