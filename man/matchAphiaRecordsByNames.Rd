@@ -15,7 +15,7 @@ matchAphiaRecordsByNames(scientificnames, marine_only = FALSE,
 \item{scientificname}{Scientific names.}
 }
 \value{
-Matching Aphia records.
+List of matching Aphia records for each input name.
 }
 \description{
 Match scientific names.

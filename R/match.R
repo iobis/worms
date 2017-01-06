@@ -3,7 +3,7 @@
 #' @param scientificname Scientific names.
 #' @param marine_only Marine only flag.
 #' @param verbose Print HTTP response information.
-#' @return Matching Aphia records.
+#' @return List of matching Aphia records for each input name.
 #' @export
 #' @examples
 #' matchAphiaRecordsByNames(c("Buccinum fusiforme", "Abra alba"))
