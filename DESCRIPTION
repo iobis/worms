@@ -6,7 +6,8 @@ Description: R client for WoRMS
 Depends:
     R (>= 3.2.1),
     httr,
-    jsonlite
+    jsonlite,
+    dplyr
 Suggests:
     testthat
 License: MIT

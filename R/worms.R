@@ -4,5 +4,5 @@
 #'
 #' @docType package
 #' @name worms
-#' @import httr jsonlite
+#' @import httr jsonlite dplyr
 NULL
